@@ -46,7 +46,6 @@
 
 			//add it to the zone we dropped the image on
 			this.appendChild(targetImage);
-			//debugger;
 
 		}
 
