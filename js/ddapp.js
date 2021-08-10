@@ -1,6 +1,3 @@
-// wrap everything in an IIFE / module
-// a module is a JavaScript "pattern" - a programming convention
-// this keeps your code private - kinda like a "black box" - which is a best practice
 
 (() => {
     //identify the nodes of interest in the DOM
@@ -13,15 +10,15 @@
 		function swapImages() {
 			// swap out the draggable thumbnail images
 			// update the backgound image of the drop zone dropcontainer
-			// 1. get the imageref attribute from the element we're clicking on
 
+			//1. get the image reference with an attribute "imageref" from the clicked element
 			// let imageIndex = this.dataset.imageref,
-			// 		// newImagePath = "images/dd/backGround" + imageIndex,
+			// 		newImagePath = "images/dd/backGround" + imageIndex,
 			// 		newImagePath = `url(images/dd/backGround${imageIndex}.jpg)`;
 
-			// 2. set the backround image of the dropcontainer
+			//2. set the image selected in the dropcontainer background
 			dropcontainer.style.backgroundImage = `url(images/dd/backGround${this.dataset.imageref}.jpg)`;
-			// debugger;
+			//debugger;
 		}
 
 		function startDrag() {
