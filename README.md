@@ -1,5 +1,5 @@
 # Drop and Drag - Fixing bugs homework
-The homework for IDP31 - MMED 3035- Design and Image 2.
+The homework for IDP31 - MMED 1055 - Multimedia Authoring 2.
 
 2nd term - Summer semester 2021 - Natalia Pabon Viteri
 
