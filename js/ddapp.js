@@ -4,21 +4,39 @@
 	const puzzleSelectors = document.querySelectorAll("#buttonHolder img"),
 				dropContainer = document.querySelector(".puzzle-board"),
 				dragImages = document.querySelectorAll(".puzzle-image"),
-				dropZones = document.querySelectorAll(".drop-zone");
+				dropZones = document.querySelectorAll(".drop-zone"),
+				dragContainer = document.querySelector(".puzzle-pieces"),
+
+				//adding the pieces data for each puezzle backGround
+				pieceData = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
 
 		// functions go in the middle
 		function swapImages() {
-			// swap out the draggable thumbnail images
-			// update the backgound image of the drop zone dropContainer
-
 			//1. get the image reference with an attribute "imageref" from the clicked element
-			// let imageIndex = this.dataset.imageref,
-			// 		newImagePath = "images/dd/backGround" + imageIndex,
-			// 		newImagePath = `url(images/dd/backGround${imageIndex}.jpg)`;
+			let currentIndex = this.dataset.imageref;
+
+			// swap out the draggable thumbnail images
+			//update the pieces images with each data
+			dragImages.forEach((image, index) => {
+				image.src = `images/dd/${pieceData [index] + currentIndex}.jpg`;
+			});
 
 			//2. set the image selected in the dropContainer background
 			dropContainer.style.backgroundImage = `url(images/dd/backGround${this.dataset.imageref}.jpg)`;
+
+			// if the images is change then reset the puzzle in its original (add the resetPuzzle function)
+			resetPuzzle();
 		}
+
+		//new function to reset the pieces in its original place
+		function resetPuzzle(){
+			dropZones.forEach(zone => {
+				if (zone.children.length > 0) {
+					dragContainer.appendChild(zone.firstElementChild);
+				}
+			})
+		}
+
 
 		function startDrag(event) {
 			console.log('dragging ' + this.id);
