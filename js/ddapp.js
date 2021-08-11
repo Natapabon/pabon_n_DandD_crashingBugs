@@ -54,7 +54,9 @@
 			//add it to the zone we dropped the image on
 			this.appendChild(targetImage);
 			targetImage.style.width = "100%";
+			targetImage.style.height = "100%";
 			targetImage.style.padding = "0%";
+			targetImage.style.margin = "0 auto";
 
 		}
 
