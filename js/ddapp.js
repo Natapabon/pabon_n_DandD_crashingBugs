@@ -39,15 +39,33 @@
 
 			//if we have already dropped and appended into a dropzone, then it shoud not happen again
 			//the return Statement is a code-killer - nothing will excute past this line statement
-			if (this.children.length > 0) { return; }
+				if (this.children.length > 0) { return; }
 
 			//get the reference to the dragged image
-			let targetImage = document.querySelector(`#${event.dataTransfer.getData("dragTarget")}`);
+			let targetImage = document.querySelector(`#${event.dataTransfer.getData("dragTarget")}`)
+
+				//with this if the targetImage should match to then appendChild works
+				//if it doesnt match it returns, with this in HTML the zones should have the same
+				//name in the piece id and the data-dropped
+
+				// this if makes the condition if it don´t match it must return
+				if (targetImage.id !== this.dataset.drop) { return; }
 
 			//add it to the zone we dropped the image on
 			this.appendChild(targetImage);
+			targetImage.style.width = "100%";
+			targetImage.style.padding = "0%";
 
 		}
+
+//		function matchBox(){
+//			//check and match the piece with id dragImages to the correct dropZones
+//			console.log("drop" + this.id);
+
+//			if (this.id === targetImage) {
+//				this.appendChild(targetImage);
+//			} else {return; }
+//		}
 
 
 		// event handling at the bottom
@@ -60,6 +78,7 @@
 		zone.addEventListener('drop',dropped, false);
 		zone.addEventListener('dragover',draggedOver, false);
 	});
+
 
 	puzzleSelectors.forEach(button => button.addEventListener("click", swapImages));
 })();

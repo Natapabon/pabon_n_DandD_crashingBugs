@@ -14,17 +14,18 @@
 		<!-- these are draggable pieces -->
 		<div class="puzzle-pieces">
 			<img id="topLeft" src="images/dd/topLeft0.jpg" alt="top left" class="puzzle-image">
-			<img id="topRigth" src="images/dd/topRight0.jpg" alt="top left" class="puzzle-image">
+			<img id="topRight" src="images/dd/topRight0.jpg" alt="top left" class="puzzle-image">
 			<img id="bottomLeft" src="images/dd/bottomLeft0.jpg" alt="top left" class="puzzle-image">
-			<img id="bottoRight" src="images/dd/bottomRight0.jpg" alt="top left" class="puzzle-image">
+			<img id="bottomRight" src="images/dd/bottomRight0.jpg" alt="top left" class="puzzle-image">
 		</div>
 		<!-- this is the drop zone  container-->
 		<div class="puzzle-board">
 			<!-- these are the drop zones -->
-			<div class="drop-zone"></div>
-			<div class="drop-zone"></div>
-			<div class="drop-zone"></div>
-			<div class="drop-zone"></div>
+			<!-- adding the data-drop to the zones and meke them match with the id of the puzzle-pieces-->
+			<div class="drop-zone" data-drop="topLeft"></div>
+			<div class="drop-zone" data-drop="topRight"></div>
+			<div class="drop-zone" data-drop="bottomLeft"></div>
+			<div class="drop-zone" data-drop="bottomRight"></div>
 		</div>
 	</section>
 
